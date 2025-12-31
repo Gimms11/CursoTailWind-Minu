@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Libre Franklin";
+  src: url("assets/LibreFranklin-VariableFont_wght.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+    --animate-shake: shake 1s ease-in-out 1;
+    --animate-aparecer: aparecer 1s ease-in-out 1;
+    
+    --color-negro: #000000;
+    --color-blanco: #ffffff;
+
+    --font-libre: "Libre Franklin", sans-serif;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-5px, 0) rotate(-2deg); } /* Mueve a la izquierda */
+  50% { transform: translate(5px, 0) rotate(2deg); }  /* Mueve a la derecha */
+  75% { transform: translate(-3px, 0) rotate(-1deg); } /* Mueve un poco a la izquierda */
+  100% { transform: translate(0, 0) rotate(0deg); } /* Vuelve al origen */
+}
+
+@keyframes aparecer {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.boton-social{
+    @apply p-2 size-12 flex items-center justify-center rounded-full
+            hover:scale-125 transition-all hover:animate-shake;
+}
